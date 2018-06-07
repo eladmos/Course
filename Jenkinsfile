@@ -20,7 +20,7 @@ npm build'''
     }
     stage('Deploy') {
       steps {
-        sh '''mkdir playbook/files
+        sh '''mkdir playbooks/files
 cp nodejs-demoapp.zip playbooks/files/nodejs-demoapp.zip
 ansible-playbook playbooks/deploy_dev.yml'''
       }
