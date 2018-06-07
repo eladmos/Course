@@ -13,6 +13,11 @@ pipeline {
 npm build'''
       }
     }
+    stage('') {
+      steps {
+        sh 'npm run test'
+      }
+    }
   }
   parameters {
     choice(name: 'REQUESTED_ACTION', choices: '''Build
