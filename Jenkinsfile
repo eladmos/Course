@@ -13,9 +13,16 @@ pipeline {
 npm build'''
       }
     }
-    stage('') {
+    stage('Test') {
       steps {
         sh 'npm run test'
+      }
+    }
+    stage('Deploy') {
+      steps {
+        sh '''mkdir playbook/files
+cp nodejs-demoapp.zip playbooks/files/nodejs-demoapp.zip
+ansible-playbook playbooks/deploy_dev.yml'''
       }
     }
   }
